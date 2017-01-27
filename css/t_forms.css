@@ -1,0 +1,96 @@
+#mframe {
+
+    /*-moz-box-shadow : 0px 0px 8px #AAA;
+
+    -webkit-box-shadow : 0px 0px 8px #AAA;
+
+    box-shadow : 0px 0px 8px #AAA;*/
+
+    width: 900px;
+
+    padding: 7px;
+
+    margin: auto;
+
+    z-index: 1;
+
+	margin-top:10px;
+
+	/*background:#EDEDED;*/
+
+    border:5px solid #ccc;
+
+}
+
+
+
+
+
+#tgrid td, #tgrid1 td, #tgrid2 td,#tgridnew td, #tgrid5 td{
+    border: 1px dotted #BBB;
+}
+
+
+
+#tgrid input[type='text'], tfoot input[type='text'], #tgrid1 input[type='text'], #tgrid2 input[type='text']{
+
+    border: none;
+
+    background-color: transparent;
+
+    width: 100px;
+
+}
+
+#tgrid5 input[type='text'], tfoot input[type='text']{
+    border: none;
+    background-color: transparent;
+  
+}
+
+td {
+
+    font-size: 12px;
+
+    font-family: Arial;
+
+}
+
+
+
+.grid_line{
+
+    height:3px;
+
+    background-color:#ccc;
+
+    border:none;
+
+}
+
+
+
+.defualt_g{
+
+    color: #fff;
+
+    font-weight: bold;
+
+    background-color: green;
+
+    padding: 5px;
+
+}
+
+
+
+.non_defualt_g{
+
+    color: #000;    
+
+    background-color: #f1f1f1;
+
+    padding: 5px;
+
+}
+

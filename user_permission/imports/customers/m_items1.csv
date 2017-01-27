@@ -1,0 +1,6 @@
+department,main_cat,sub_cat,code,description,units,purchase_price,cost_price,is_measure
+dep1,main cat 01,sub cat 01,1,Samba Rice,Kg,60,75,yes
+dep2,main cat 02,sub cat 02,2,Other Rice,Ml,72,80,yes
+dep3,main cat 02,sub cat 03,3,Kakulu,Ml,61,70,no
+dep4,main cat 04,sub cat 04,4,Big Dhall,Kg,60,65,yes
+dep3,main cat 05,sub cat 05,5,Small Dhall,Ml,63,70,yes
