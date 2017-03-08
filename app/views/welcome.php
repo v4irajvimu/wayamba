@@ -1,61 +1,8 @@
-
-
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-  <link type="image/png" href="<?=base_url(); ?>img/ico.png" rel="icon">
-  <title>KGC (pvt) LTD</title>
-  <link rel="stylesheet" type="text/css" href="<?=base_url(); ?>css/main.css" />
-  <link rel="stylesheet" type="text/css" href="<?=base_url(); ?>css/inputs.css" rel="stylesheet" />
-  <link rel="stylesheet" type="text/css" href="<?=base_url(); ?>css/grid.css" rel="stylesheet" />
-  <link rel="stylesheet" type="text/css" href="<?=base_url(); ?>css/jquery-ui-1.8.4_.custom.css" />
-  <link rel="stylesheet" type="text/css" href="<?=base_url(); ?>css/jquery.tablescroll.css" />
-  <link rel="stylesheet" type="text/css" href="<?=base_url(); ?>css/jquery.autocomplete.css" />
-  <link href="<?=base_url(); ?>css/superfish.css" rel="stylesheet" type="text/css">
-  <link href="<?=base_url(); ?>css/slider.css" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" type="text/css" href="<?=base_url(); ?>css/menu.css" />
-
   <!-- Dashboard Module CSS -->
   <link rel="stylesheet" type="text/css" href="<?=base_url(); ?>css/dashboard_module.css" />
 
-  <script type="text/javascript" src="<?=base_url(); ?>js/jquery.js"></script>
 
 
-  <script type="text/javascript" src="<?=base_url(); ?>js/slides.min.jquery.js"></script>
-  <script type="text/javascript" src="<?=base_url(); ?>superfish.js"></script>
-  <script type="text/javascript" src="<?=base_url(); ?>js/script.js"></script>
-  <script type="text/javascript" src="<?=base_url(); ?>js/jquery.ui.core.min.js"></script>
-  <script type="text/javascript" src="<?=base_url(); ?>js/jquery-ui-1.8.17.custom.min.js"></script>
-  <script type="text/javascript" src="<?=base_url(); ?>js/autoNumeric1.6.2.js"></script>
-  <script type="text/javascript" src="<?=base_url(); ?>js/jquery.tablescroll.js"></script>
-  <script type="text/javascript" src="<?=base_url(); ?>js/jquery.form.js"></script>
-  <script type="text/javascript" src="<?=base_url(); ?>js/jquery.autocomplete.js"></script>
-  <script type="text/javascript" src="<?=base_url(); ?>js/inputs.js"></script>
-  <script type="text/javascript" src="<?=base_url(); ?>js/menu.js"></script>
-  <script type="text/javascript" src="<?=base_url(); ?>js/dashbord.js"></script>
-  <!-- Hichart CDN  -->
-  <script src="https://code.highcharts.com/highcharts.js"></script>
-  <script src="https://code.highcharts.com/highcharts-3d.js"></script>
-  <script src="https://code.highcharts.com/modules/exporting.js"></script>
-  <script type="text/javascript" src="<?=base_url(); ?>js/accounting.js"></script>
-
-
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-  <!-- Optional theme -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <!-- Latest compiled and minified JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<link rel="stylesheet" href="/resources/demos/style.css">
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script>
-$( function() {
-  $( ".datepicker" ).datepicker({ dateFormat: 'yy-mm-dd' });
-} );
-</script>
 
   <script type="text/javascript">
 
@@ -63,6 +10,7 @@ $( function() {
     get_dashbord_date();
 
     $("#load_dash").on("click",function(){
+
       get_dashbord_date();
     });
   });
@@ -158,7 +106,7 @@ $( function() {
           cursor: 'pointer',
           depth: 35,
           dataLabels: {
-            enabled: false,
+            enabled: true,
             format: '{point.name}'
           }
         }
@@ -227,6 +175,7 @@ $( function() {
     $(".count").fadeIn('slow');
   }
   function get_dashbord_date(){
+    $("#loading").show();
     var from=$("#d_from").val();
     var to=$("#d_to").val();
     $.post("index.php/main/load_data/dashbord/get_all_sales", {
@@ -299,6 +248,7 @@ $( function() {
       }else{
           data_setting(cash, credit, hp, collection, stock_val, stock_val_lastweek, from, to);
       }
+      $("#loading").hide();
     },"json");
   }
 
@@ -306,10 +256,9 @@ $( function() {
   </script>
 
 
-
-</head>
-<body ondragstart="return false;" ondrop="return false;">
-
+<div class="text-center" id="loading" style="display:none; width:100%; height: 100%; z-index:10000; position: absolute; background-color: rgba(83,77,77,0.655);">
+  <img src="<?=base_url(); ?>images/spin.gif" alt="" style="width:150px; height: 150px;margin-top:15%;" >
+</div>
   <div id="blocker"></div>
   <div id="logout">
 
@@ -321,6 +270,7 @@ $( function() {
     <div class="company_name"></div>
   </div>
 </div> -->
+
 <!-- Date Range -->
 <div class="row" style="border-bottom:2px solid Green; padding:10px; background-color:#cccccc;">
   <div class="col-sm-6 text-center">
@@ -344,8 +294,8 @@ $( function() {
         <span id="inputSuccess2Status" class="sr-only">(success)</span>
       </div>
       <div class="col-sm-2 text-center">
-        <a id="load_dash" class="">
-          <img src="<?=base_url(); ?>images/gps.gif" alt="" >
+        <a id="load_dash" class="btn btn-primary" style="">
+          <img src="<?=base_url(); ?>images/gps.gif" alt="" style="width:25px; height: 25px;" > LOAD &nbsp;&nbsp;
         </a>
       </div>
     </div>

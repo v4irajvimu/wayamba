@@ -1180,7 +1180,7 @@ public function save_sub_items(){
       'm_settu_item_category.code as s_cat',
       'm_settu_item_category.name as s_cat_name',
       'm_settu_item_sum.name as settu_name',  
-      't_hp_sales_sum.dueDate' 
+      't_hp_sales_sum.due_date as dueDate',
       ));
 
     $this->db->from('t_hp_sales_sum');

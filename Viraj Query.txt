@@ -1,0 +1,71 @@
+---- total sale query----
+
+SELECT cl,bc,CODE,ddate,SUM(qty) AS qty,SUM(amount) AS amount FROM 
+
+(SELECT s.cl,s.bc,CODE,ddate,SUM(qty) AS qty,SUM(amount) AS amount FROM t_cash_sales_det d
+JOIN t_cash_sales_sum s ON s.`cl`=d.`cl` AND s.`bc`=d.`bc` AND s.nno=d.`nno`
+WHERE d.`code`='10010010024' AND s.is_cancel='0'
+UNION ALL
+SELECT s.cl,s.bc,CODE,ddate,IFNULL(SUM(qty),0) AS qty,IFNULL(SUM(amount),0) AS amount FROM t_credit_sales_det d
+JOIN t_credit_sales_sum s ON s.`cl`=d.`cl` AND s.`bc`=d.`bc` AND s.nno=d.`nno`
+WHERE d.`code`='10010010024' AND s.is_cancel='0'
+UNION ALL
+SELECT s.cl,s.bc,item_code,ddate,IFNULL(SUM(qty),0) AS qty,IFNULL(SUM(amount),0) AS amount FROM t_hp_sales_det d
+JOIN t_hp_sales_sum s ON s.`cl`=d.`cl` AND s.`bc`=d.`bc` AND s.nno=d.`nno`
+WHERE d.`item_code`='10010010024' AND s.is_cancel='0'
+UNION ALL
+SELECT s.cl,s.bc,CODE,ddate,IFNULL(SUM(qty),0) AS qty,IFNULL(SUM(amount),0) AS amount FROM `t_sales_order_sales_det` d
+JOIN `t_sales_order_sales_sum` s ON s.`cl`=d.`cl` AND s.`bc`=d.`bc` AND s.nno=d.`nno`
+WHERE d.`code`='10010010024' AND s.is_cancel='0') a
+
+WHERE ddate='2017-02-28' AND a.bc='a2'
+
+
+
+--------------------- purchase and purchase return----------------
+SELECT d.`code`,IFNULL(SUM(d.qty),0) AS qty,IFNULL(SUM(d.amount),0) AS amount,IFNULL(ret.ret_qty,0) AS ret_qty,IFNULL(ret.ret_amount,0)AS ret_amount FROM t_grn_det d
+JOIN t_grn_sum s ON s.`cl`=d.`cl` AND s.`bc`=d.`bc` AND s.`nno`=d.`nno`
+ LEFT JOIN(SELECT dd.code,ss.`grn_no`,ss.`cl`,ss.bc,SUM(qty)AS ret_qty,SUM(ss.net_amount)AS ret_amount FROM `t_pur_ret_det` dd 
+JOIN `t_pur_ret_sum` ss ON ss.`cl`=dd.`cl` AND ss.`cl`=dd.`cl` AND ss.`nno`=dd.`nno`
+WHERE ss.`is_approve`='1' AND ss.`is_cancel`='0' AND dd.cl='c1' AND dd.bc='A2' AND ss.`ddate`='2017-02-28'
+GROUP BY dd.`code`)ret ON  ret.cl=s.cl AND ret.bc=s.`bc` AND ret.code=d.`code`
+WHERE s.`bc`='a2' AND s.`ddate`='2017-02-28' AND s.`is_approve`='1' AND s.`is_cancel`='0'
+GROUP BY d.`code`
+
+-------------------Sales_return--------------------
+SELECT CODE,SUM(qty) AS qty,SUM(amount) AS amount,SUM(ret_qty)AS ret_qty,SUM(ret_amount) AS ret_amount FROM (
+
+SELECT s.`ddate`,d.`code`,IFNULL(SUM(d.qty),0) AS qty,IFNULL(SUM(d.amount),0) AS amount,IFNULL(ret.ret_qty,0) AS ret_qty,IFNULL(ret.ret_amount,0)AS ret_amount FROM t_cash_sales_det d
+JOIN t_cash_sales_sum s ON s.`cl`=d.`cl` AND s.`bc`=d.`bc` AND s.`nno`=d.`nno`
+ LEFT JOIN(SELECT dd.code,ss.`cl`,ss.bc,SUM(qty)AS ret_qty,SUM(ss.net_amount)AS ret_amount FROM `t_sales_return_det` dd 
+JOIN `t_sales_return_sum` ss ON ss.`cl`=dd.`cl` AND ss.`cl`=dd.`cl` AND ss.`nno`=dd.`nno`
+WHERE ss.`is_approve`='1' AND ss.`is_cancel`='0' AND dd.cl='c1' AND dd.bc='A2' AND ss.`ddate`='2017-02-28' AND  ss.`sales_type`='4'
+GROUP BY dd.`code`)ret ON  ret.cl=s.cl AND ret.bc=s.`bc` AND ret.code=d.`code`
+WHERE s.`bc`='a2' AND s.`ddate`='2017-02-28' AND s.`is_approve`='1' AND s.`is_cancel`='0' AND d.code='10010010024'
+GROUP BY d.`code`
+
+UNION ALL 
+
+SELECT s.`ddate`,d.`code`,IFNULL(SUM(d.qty),0) AS qty,IFNULL(SUM(d.amount),0) AS amount,IFNULL(ret.ret_qty,0) AS ret_qty,IFNULL(ret.ret_amount,0)AS ret_amount 
+FROM t_credit_sales_det d
+JOIN t_credit_sales_sum s ON s.`cl`=d.`cl` AND s.`bc`=d.`bc` AND s.`nno`=d.`nno`
+ LEFT JOIN(SELECT dd.code,ss.`cl`,ss.bc,SUM(qty)AS ret_qty,SUM(ss.net_amount)AS ret_amount FROM `t_sales_return_det` dd 
+JOIN `t_sales_return_sum` ss ON ss.`cl`=dd.`cl` AND ss.`cl`=dd.`cl` AND ss.`nno`=dd.`nno`
+WHERE ss.`is_approve`='1' AND ss.`is_cancel`='0' AND dd.cl='c1' AND dd.bc='A2' AND ss.`ddate`='2017-02-28' AND  ss.`sales_type`='5'
+GROUP BY dd.`code`)ret ON  ret.cl=s.cl AND ret.bc=s.`bc` AND ret.code=d.`code`
+WHERE s.`bc`='a2' AND s.`ddate`='2017-02-28' AND s.`is_approve`='1' AND s.`is_cancel`='0' AND d.code='10010010024'
+GROUP BY d.`code`
+
+UNION ALL
+
+SELECT s.`ddate`,d.`item_code`,IFNULL(SUM(d.qty),0) AS qty,IFNULL(SUM(d.amount),0) AS amount,IFNULL(ret.ret_qty,0) AS ret_qty,IFNULL(ret.ret_amount,0)AS ret_amount 
+FROM t_hp_sales_det d
+JOIN t_hp_sales_sum s ON s.`cl`=d.`cl` AND s.`bc`=d.`bc` AND s.`nno`=d.`nno`
+LEFT JOIN(SELECT dd.code,ss.`cl`,ss.bc,SUM(qty)AS ret_qty,SUM(ss.net_amount)AS ret_amount FROM `t_hp_return_det` dd 
+JOIN `t_hp_return_sum` ss ON ss.`cl`=dd.`cl` AND ss.`cl`=dd.`cl` AND ss.`nno`=dd.`nno`
+WHERE ss.`is_approve`='1' AND ss.`is_cancel`='0' AND dd.cl='c1' AND dd.bc='A2' AND ss.`ddate`='2017-02-28'
+GROUP BY dd.`code`)ret ON  ret.cl=s.cl AND ret.bc=s.`bc` AND ret.code=d.`item_code`
+WHERE s.`bc`='a2' AND s.`ddate`='2017-02-28' AND s.`is_cancel`='0' AND d.item_code='10010010024'
+GROUP BY d.`item_code`)a
+
+WHERE ddate='2017-02-28' 

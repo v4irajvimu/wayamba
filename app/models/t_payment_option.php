@@ -1420,33 +1420,91 @@ public function get_due_date(){
 }
 
 
-public function get_due_date_hp(){
+// public function get_due_date_hp(){
 
-  $hp_date_ddate  =$_POST['trans_date2'];
-  $due_date       =$_POST['trans_date'];
-  $num_instalment =$_POST['num_of_installment'];
+//   $hp_date_ddate  =$_POST['trans_date2'];
+//   $due_date       =$_POST['trans_date'];
+//   $num_instalment =$_POST['num_of_installment'];
 
-  $orderdate = explode('-', $hp_date_ddate);
-  $hp_year = $orderdate[0];
-  $hp_month = $orderdate[1];
-  $hp_date = $orderdate[2];
+//   $orderdate = explode('-', $hp_date_ddate);
+//   $hp_year = $orderdate[0];
+//   $hp_month = $orderdate[1];
+//   $hp_date = $orderdate[2];
 
-  if($due_date>1){
-    $hp_shedule_date = $hp_year.'-'.$hp_month.'-'.$due_date;
-  }else{
-    $hp_shedule_date = $hp_date_ddate;
+//   if($due_date>1){
+//     $hp_shedule_date = $hp_year.'-'.$hp_month.'-'.$due_date;
+//   }else{
+//     $hp_shedule_date = $hp_date_ddate;
+//   }
+//   $b=array();
+//   $y=1;
+//   for($x=0; $x<$num_instalment; $x++){
+//     $sql="SELECT DATE_ADD('$hp_shedule_date', INTERVAL $y MONTH) as ins_date";
+//     $month=$this->db->query($sql)->row()->ins_date;
+//     array_push($b,$month);
+//     $y++;
+//   }
+//   $a['a'] =  $b; 
+//   echo json_encode($a);
+// }
+
+// Viraj Modification
+  public function get_due_date_hp(){
+    $hp_date_ddate  =$_POST['trans_date2'];
+    $due_date       =$_POST['trans_date'];
+    $num_instalment =$_POST['num_of_installment'];
+    $scheme = $_POST['scheme'];
+
+    $orderdate = explode('-', $hp_date_ddate);
+    $hp_year = $orderdate[0];
+    $hp_month = $orderdate[1];
+    $hp_date = $orderdate[2];
+
+    // Get schema Details
+    $res = $this->db->get_where('m_hp_payment_scheme', array('code' => $scheme))->first_row();
+    $payment_type = $res->payment_type;
+    $payment_gap = $res->payment_gap;
+
+    if(isset($due_date)){
+      $hp_shedule_date = $due_date;
+    }
+    else{
+      $hp_shedule_date = $hp_date_ddate;
+    }
+    $b=array();
+    $y=0;
+    // Assigning the parameters to date range generation.
+    if($payment_type  == 1){
+      // Daily Basis
+      $y=$payment_gap;
+      $intvl_type = "DAY";
+    }
+    elseif ($payment_type  == 2) {
+      // Monthly Basis
+      $y=1;
+      $intvl_type = "MONTH";
+    }
+    else {
+      // Yearly Basis *** COPIED FROM MONTH. NOT IMPLEMENTED.
+      $y=1;
+      $intvl_type = "MONTH";
+    }
+
+
+    // Add first due date to array
+    array_push($b,$hp_shedule_date);
+
+    for($x=1; $x<$num_instalment; $x++){
+      $sql="SELECT DATE_ADD('$hp_shedule_date', INTERVAL $y $intvl_type) as ins_date";
+      $month=$this->db->query($sql)->row()->ins_date;
+      array_push($b,$month);
+      $hp_shedule_date = $month;
+      //$y++;
+    }
+    $a['a'] =  $b;
+    echo json_encode($a);
   }
-  $b=array();
-  $y=1;
-  for($x=0; $x<$num_instalment; $x++){
-    $sql="SELECT DATE_ADD('$hp_shedule_date', INTERVAL $y MONTH) as ins_date";
-    $month=$this->db->query($sql)->row()->ins_date;
-    array_push($b,$month);
-    $y++;
-  }
-  $a['a'] =  $b; 
-  echo json_encode($a);
-}
+
 
 public function dtCheck($yr,$mn,$dt)
 {

@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FileZilla3 version="3.24.1" platform="windows">
+	<Servers>
+		<Folder expanded="1">My Sites<Server>
+				<Host>103.53.199.83</Host>
+				<Port>21</Port>
+				<Protocol>6</Protocol>
+				<Type>0</Type>
+				<User>asian</User>
+				<Pass encoding="base64">NHtyeTt4LVtVIzdK</Pass>
+				<Logontype>1</Logontype>
+				<TimezoneOffset>0</TimezoneOffset>
+				<PasvMode>MODE_DEFAULT</PasvMode>
+				<MaximumMultipleConnections>0</MaximumMultipleConnections>
+				<EncodingType>Auto</EncodingType>
+				<BypassProxy>0</BypassProxy>
+				<Name>AlmEleacc</Name>
+				<Comments />
+				<Colour>0</Colour>
+				<LocalDir />
+				<RemoteDir />
+				<SyncBrowsing>0</SyncBrowsing>
+				<DirectoryComparison>0</DirectoryComparison>AlmEleacc</Server>
+			<Server>
+				<Host>www.amilexlk.com</Host>
+				<Port>21</Port>
+				<Protocol>6</Protocol>
+				<Type>0</Type>
+				<User>amilexlk</User>
+				<Pass encoding="base64">Skd7UXlYd1UmOUsz</Pass>
+				<Logontype>1</Logontype>
+				<TimezoneOffset>0</TimezoneOffset>
+				<PasvMode>MODE_DEFAULT</PasvMode>
+				<MaximumMultipleConnections>0</MaximumMultipleConnections>
+				<EncodingType>Auto</EncodingType>
+				<BypassProxy>0</BypassProxy>
+				<Name>Amilex</Name>
+				<Comments>amilexlk
+JG{QyXwU&amp;9K3</Comments>
+				<Colour>0</Colour>
+				<LocalDir />
+				<RemoteDir />
+				<SyncBrowsing>0</SyncBrowsing>
+				<DirectoryComparison>0</DirectoryComparison>Amilex</Server>
+			<Server>
+				<Host>chandana.eleacc.biz</Host>
+				<Port>21</Port>
+				<Protocol>6</Protocol>
+				<Type>0</Type>
+				<User>chandana</User>
+				<Pass encoding="base64">cVtxQzFnU3JFR29k</Pass>
+				<Logontype>1</Logontype>
+				<TimezoneOffset>0</TimezoneOffset>
+				<PasvMode>MODE_DEFAULT</PasvMode>
+				<MaximumMultipleConnections>0</MaximumMultipleConnections>
+				<EncodingType>Auto</EncodingType>
+				<BypassProxy>0</BypassProxy>
+				<Name>CHANDANA ELEACC</Name>
+				<Comments />
+				<Colour>0</Colour>
+				<LocalDir />
+				<RemoteDir />
+				<SyncBrowsing>0</SyncBrowsing>
+				<DirectoryComparison>0</DirectoryComparison>CHANDANA ELEACC</Server>
+			<Server>
+				<Host>ftp.softmasterlk1.com</Host>
+				<Port>21</Port>
+				<Protocol>0</Protocol>
+				<Type>0</Type>
+				<User>user@softmasterlk1.com</User>
+				<Logontype>2</Logontype>
+				<TimezoneOffset>0</TimezoneOffset>
+				<PasvMode>MODE_DEFAULT</PasvMode>
+				<MaximumMultipleConnections>0</MaximumMultipleConnections>
+				<EncodingType>Auto</EncodingType>
+				<BypassProxy>0</BypassProxy>
+				<Name>ftp.softmasterlk1.com</Name>
+				<Comments />
+				<Colour>0</Colour>
+				<LocalDir />
+				<RemoteDir />
+				<SyncBrowsing>0</SyncBrowsing>
+				<DirectoryComparison>0</DirectoryComparison>ftp.softmasterlk1.com</Server>
+			<Server>
+				<Host>gallemusical.eleacc.biz</Host>
+				<Port>21</Port>
+				<Protocol>6</Protocol>
+				<Type>0</Type>
+				<User>gallemusical</User>
+				<Pass encoding="base64">S31VdDJeQktoS0tU</Pass>
+				<Logontype>1</Logontype>
+				<TimezoneOffset>0</TimezoneOffset>
+				<PasvMode>MODE_DEFAULT</PasvMode>
+				<MaximumMultipleConnections>0</MaximumMultipleConnections>
+				<EncodingType>Auto</EncodingType>
+				<BypassProxy>0</BypassProxy>
+				<Name>Gall Musical</Name>
+				<Comments />
+				<Colour>0</Colour>
+				<LocalDir />
+				<RemoteDir />
+				<SyncBrowsing>0</SyncBrowsing>
+				<DirectoryComparison>0</DirectoryComparison>Gall Musical</Server>
+			<Server>
+				<Host>gallemusical.eleacc.biz</Host>
+				<Port>21</Port>
+				<Protocol>6</Protocol>
+				<Type>0</Type>
+				<User>gallemusical</User>
+				<Pass encoding="base64">S31VdDJeQktoS0tU</Pass>
+				<Logontype>1</Logontype>
+				<TimezoneOffset>0</TimezoneOffset>
+				<PasvMode>MODE_DEFAULT</PasvMode>
+				<MaximumMultipleConnections>0</MaximumMultipleConnections>
+				<EncodingType>Auto</EncodingType>
+				<BypassProxy>0</BypassProxy>
+				<Name>GALLE MUSICAL</Name>
+				<Comments>K}Ut2^BKhKKT
+
+gallemusical
+
+gallemusical.eleacc.biz</Comments>
+				<Colour>0</Colour>
+				<LocalDir />
+				<RemoteDir />
+				<SyncBrowsing>0</SyncBrowsing>
+				<DirectoryComparison>0</DirectoryComparison>GALLE MUSICAL</Server>
+			<Server>
+				<Host>103.53.199.83</Host>
+				<Port>21</Port>
+				<Protocol>6</Protocol>
+				<Type>0</Type>
+				<User>himali</User>
+				<Pass encoding="base64">Y0xyXl4lLUBPVG9n</Pass>
+				<Logontype>1</Logontype>
+				<TimezoneOffset>0</TimezoneOffset>
+				<PasvMode>MODE_DEFAULT</PasvMode>
+				<MaximumMultipleConnections>0</MaximumMultipleConnections>
+				<EncodingType>Auto</EncodingType>
+				<BypassProxy>0</BypassProxy>
+				<Name>himaliEleacc</Name>
+				<Comments />
+				<Colour>0</Colour>
+				<LocalDir />
+				<RemoteDir />
+				<SyncBrowsing>0</SyncBrowsing>
+				<DirectoryComparison>0</DirectoryComparison>himaliEleacc</Server>
+			<Server>
+				<Host>www.kegalufreshfruits.com</Host>
+				<Port>21</Port>
+				<Protocol>6</Protocol>
+				<Type>0</Type>
+				<User>kegalufr</User>
+				<Pass encoding="base64">QmluZXRoJltmcmVzaF0xKg==</Pass>
+				<Logontype>1</Logontype>
+				<TimezoneOffset>0</TimezoneOffset>
+				<PasvMode>MODE_DEFAULT</PasvMode>
+				<MaximumMultipleConnections>0</MaximumMultipleConnections>
+				<EncodingType>Auto</EncodingType>
+				<BypassProxy>0</BypassProxy>
+				<Name>KFF</Name>
+				<Comments>Bineth&amp;[fresh]1*</Comments>
+				<Colour>0</Colour>
+				<LocalDir />
+				<RemoteDir />
+				<SyncBrowsing>0</SyncBrowsing>
+				<DirectoryComparison>0</DirectoryComparison>KFF</Server>
+			<Server>
+				<Host>malar.eleacc.biz</Host>
+				<Port>21</Port>
+				<Protocol>6</Protocol>
+				<Type>0</Type>
+				<User>malar</User>
+				<Pass encoding="base64">bD0yKEsqdVJ7YjBe</Pass>
+				<Logontype>1</Logontype>
+				<TimezoneOffset>0</TimezoneOffset>
+				<PasvMode>MODE_DEFAULT</PasvMode>
+				<MaximumMultipleConnections>0</MaximumMultipleConnections>
+				<EncodingType>Auto</EncodingType>
+				<BypassProxy>0</BypassProxy>
+				<Name>MALAR ELEACC</Name>
+				<Comments>l=2(K*uR{b0^</Comments>
+				<Colour>0</Colour>
+				<LocalDir />
+				<RemoteDir />
+				<SyncBrowsing>0</SyncBrowsing>
+				<DirectoryComparison>0</DirectoryComparison>MALAR ELEACC</Server>
+			<Server>
+				<Host>192.185.117.116</Host>
+				<Port>21</Port>
+				<Protocol>6</Protocol>
+				<Type>0</Type>
+				<User>wtclksmtk</User>
+				<Pass encoding="base64">dEhhbD9oZF1XTHZu</Pass>
+				<Logontype>1</Logontype>
+				<TimezoneOffset>0</TimezoneOffset>
+				<PasvMode>MODE_DEFAULT</PasvMode>
+				<MaximumMultipleConnections>0</MaximumMultipleConnections>
+				<EncodingType>Auto</EncodingType>
+				<BypassProxy>0</BypassProxy>
+				<Name>NEW HOST WTC</Name>
+				<Comments>tHal?hd]WLvn</Comments>
+				<Colour>0</Colour>
+				<LocalDir />
+				<RemoteDir />
+				<SyncBrowsing>0</SyncBrowsing>
+				<DirectoryComparison>0</DirectoryComparison>NEW HOST WTC</Server>
+			<Server>
+				<Host>shahomes.eleacc.biz</Host>
+				<Port>21</Port>
+				<Protocol>6</Protocol>
+				<Type>0</Type>
+				<User>shahomes</User>
+				<Pass encoding="base64">eUFlSlRdW2tMLShz</Pass>
+				<Logontype>1</Logontype>
+				<TimezoneOffset>0</TimezoneOffset>
+				<PasvMode>MODE_DEFAULT</PasvMode>
+				<MaximumMultipleConnections>0</MaximumMultipleConnections>
+				<EncodingType>Auto</EncodingType>
+				<BypassProxy>0</BypassProxy>
+				<Name>SHA HOMES ELEACC</Name>
+				<Comments />
+				<Colour>0</Colour>
+				<LocalDir />
+				<RemoteDir />
+				<SyncBrowsing>0</SyncBrowsing>
+				<DirectoryComparison>0</DirectoryComparison>SHA HOMES ELEACC</Server>
+			<Server>
+				<Host>www.softmasterlk1.com</Host>
+				<Port>21</Port>
+				<Protocol>6</Protocol>
+				<Type>0</Type>
+				<User>user2@softmasterlk1.com</User>
+				<Pass encoding="base64">c210a0AyMDE0</Pass>
+				<Logontype>1</Logontype>
+				<TimezoneOffset>0</TimezoneOffset>
+				<PasvMode>MODE_DEFAULT</PasvMode>
+				<MaximumMultipleConnections>0</MaximumMultipleConnections>
+				<EncodingType>Auto</EncodingType>
+				<BypassProxy>0</BypassProxy>
+				<Name>SM1</Name>
+				<Comments />
+				<Colour>0</Colour>
+				<LocalDir />
+				<RemoteDir />
+				<SyncBrowsing>0</SyncBrowsing>
+				<DirectoryComparison>0</DirectoryComparison>SM1</Server>
+			<Server>
+				<Host>ftp.softmasterlk1.com</Host>
+				<Port>21</Port>
+				<Protocol>6</Protocol>
+				<Type>0</Type>
+				<User>user@softmasterlk1.com</User>
+				<Pass encoding="base64">c210a0AyMDE0</Pass>
+				<Logontype>1</Logontype>
+				<TimezoneOffset>0</TimezoneOffset>
+				<PasvMode>MODE_DEFAULT</PasvMode>
+				<MaximumMultipleConnections>0</MaximumMultipleConnections>
+				<EncodingType>Auto</EncodingType>
+				<BypassProxy>0</BypassProxy>
+				<Name>softmaserlk1.com</Name>
+				<Comments>smtk@2014</Comments>
+				<Colour>0</Colour>
+				<LocalDir />
+				<RemoteDir />
+				<SyncBrowsing>0</SyncBrowsing>
+				<DirectoryComparison>0</DirectoryComparison>softmaserlk1.com</Server>
+			<Server>
+				<Host>www.softmastergroup.com</Host>
+				<Port>21</Port>
+				<Protocol>6</Protocol>
+				<Type>0</Type>
+				<User>user@softmastergroup.com</User>
+				<Pass encoding="base64">QE1DdStHM1BeJCMj</Pass>
+				<Logontype>1</Logontype>
+				<TimezoneOffset>0</TimezoneOffset>
+				<PasvMode>MODE_DEFAULT</PasvMode>
+				<MaximumMultipleConnections>0</MaximumMultipleConnections>
+				<EncodingType>Auto</EncodingType>
+				<BypassProxy>0</BypassProxy>
+				<Name>softmastergroup</Name>
+				<Comments />
+				<Colour>0</Colour>
+				<LocalDir />
+				<RemoteDir />
+				<SyncBrowsing>0</SyncBrowsing>
+				<DirectoryComparison>0</DirectoryComparison>softmastergroup</Server>
+			<Server>
+				<Host>softmasterlk.com</Host>
+				<Port>21</Port>
+				<Protocol>0</Protocol>
+				<Type>0</Type>
+				<User>bee30@softmasterlk.com</User>
+				<Pass encoding="base64">YmVlMzBAc210aw==</Pass>
+				<Logontype>1</Logontype>
+				<TimezoneOffset>0</TimezoneOffset>
+				<PasvMode>MODE_DEFAULT</PasvMode>
+				<MaximumMultipleConnections>0</MaximumMultipleConnections>
+				<EncodingType>Auto</EncodingType>
+				<BypassProxy>0</BypassProxy>
+				<Name>softmasterlk</Name>
+				<Comments>bee30@smtk</Comments>
+				<Colour>0</Colour>
+				<LocalDir />
+				<RemoteDir />
+				<SyncBrowsing>0</SyncBrowsing>
+				<DirectoryComparison>0</DirectoryComparison>softmasterlk</Server>
+			<Server>
+				<Host>ftp.softmasterlk.com</Host>
+				<Port>21</Port>
+				<Protocol>6</Protocol>
+				<Type>0</Type>
+				<User>tm@softmasterlk.com</User>
+				<Pass encoding="base64">VGFza21hbmFnZXJAMjAxNg==</Pass>
+				<Logontype>1</Logontype>
+				<TimezoneOffset>0</TimezoneOffset>
+				<PasvMode>MODE_DEFAULT</PasvMode>
+				<MaximumMultipleConnections>0</MaximumMultipleConnections>
+				<EncodingType>Auto</EncodingType>
+				<BypassProxy>0</BypassProxy>
+				<Name>softmasterlk.com</Name>
+				<Comments>Taskmanager@2016</Comments>
+				<Colour>0</Colour>
+				<LocalDir />
+				<RemoteDir />
+				<SyncBrowsing>0</SyncBrowsing>
+				<DirectoryComparison>0</DirectoryComparison>softmasterlk.com</Server>
+			<Server>
+				<Host>192.185.117.103</Host>
+				<Port>21</Port>
+				<Protocol>0</Protocol>
+				<Type>0</Type>
+				<User>mahanama@sunmatchlk.com</User>
+				<Pass encoding="base64">bWFoYW5hbWExOTcy</Pass>
+				<Logontype>1</Logontype>
+				<TimezoneOffset>0</TimezoneOffset>
+				<PasvMode>MODE_DEFAULT</PasvMode>
+				<MaximumMultipleConnections>0</MaximumMultipleConnections>
+				<EncodingType>Auto</EncodingType>
+				<BypassProxy>0</BypassProxy>
+				<Name>sunmatchlk.com</Name>
+				<Comments />
+				<Colour>0</Colour>
+				<LocalDir />
+				<RemoteDir />
+				<SyncBrowsing>0</SyncBrowsing>
+				<DirectoryComparison>0</DirectoryComparison>sunmatchlk.com</Server>
+			<Server>
+				<Host>tm.eleacc.biz</Host>
+				<Port>21</Port>
+				<Protocol>6</Protocol>
+				<Type>0</Type>
+				<User>tmeleacc</User>
+				<Pass encoding="base64">XUxHaWRiZ3ZBY14t</Pass>
+				<Logontype>1</Logontype>
+				<TimezoneOffset>0</TimezoneOffset>
+				<PasvMode>MODE_DEFAULT</PasvMode>
+				<MaximumMultipleConnections>0</MaximumMultipleConnections>
+				<EncodingType>Auto</EncodingType>
+				<BypassProxy>0</BypassProxy>
+				<Name>TM ELEACC</Name>
+				<Comments>tm.eleacc.biz
+tmeleacc
+]LGidbgvAc^-</Comments>
+				<Colour>0</Colour>
+				<LocalDir />
+				<RemoteDir />
+				<SyncBrowsing>0</SyncBrowsing>
+				<DirectoryComparison>0</DirectoryComparison>TM ELEACC</Server>
+			<Server>
+				<Host>192.185.117.116</Host>
+				<Port>21</Port>
+				<Protocol>6</Protocol>
+				<Type>0</Type>
+				<User>wayambasmtk</User>
+				<Pass encoding="base64">MWRBKFpEdlclSzM2</Pass>
+				<Logontype>1</Logontype>
+				<TimezoneOffset>0</TimezoneOffset>
+				<PasvMode>MODE_DEFAULT</PasvMode>
+				<MaximumMultipleConnections>0</MaximumMultipleConnections>
+				<EncodingType>Auto</EncodingType>
+				<BypassProxy>0</BypassProxy>
+				<Name>Wayamba</Name>
+				<Comments />
+				<Colour>0</Colour>
+				<LocalDir />
+				<RemoteDir />
+				<SyncBrowsing>0</SyncBrowsing>
+				<DirectoryComparison>0</DirectoryComparison>Wayamba</Server>
+			<Server>
+				<Host>www.wingrouplk.com</Host>
+				<Port>21</Port>
+				<Protocol>6</Protocol>
+				<Type>0</Type>
+				<User>wingroup@wingrouplk.com</User>
+				<Pass encoding="base64">Nmk0ZTJoOWRiOTEj</Pass>
+				<Logontype>1</Logontype>
+				<TimezoneOffset>0</TimezoneOffset>
+				<PasvMode>MODE_DEFAULT</PasvMode>
+				<MaximumMultipleConnections>0</MaximumMultipleConnections>
+				<EncodingType>Auto</EncodingType>
+				<BypassProxy>0</BypassProxy>
+				<Name>wingroup</Name>
+				<Comments />
+				<Colour>0</Colour>
+				<LocalDir />
+				<RemoteDir />
+				<SyncBrowsing>0</SyncBrowsing>
+				<DirectoryComparison>0</DirectoryComparison>wingroup</Server>
+			<Server>
+				<Host>192.185.117.116</Host>
+				<Port>21</Port>
+				<Protocol>6</Protocol>
+				<Type>0</Type>
+				<User>wtclksmtk</User>
+				<Pass encoding="base64">dEhhbD9oZF1XTHZu</Pass>
+				<Logontype>1</Logontype>
+				<TimezoneOffset>0</TimezoneOffset>
+				<PasvMode>MODE_DEFAULT</PasvMode>
+				<MaximumMultipleConnections>0</MaximumMultipleConnections>
+				<EncodingType>Auto</EncodingType>
+				<BypassProxy>0</BypassProxy>
+				<Name>WTCLK.SPACE</Name>
+				<Comments>92.185.117.116
+wtclksmtk
+tHal?hd]WLvn</Comments>
+				<Colour>0</Colour>
+				<LocalDir />
+				<RemoteDir />
+				<SyncBrowsing>0</SyncBrowsing>
+				<DirectoryComparison>0</DirectoryComparison>WTCLK.SPACE</Server>
+		</Folder>
+	</Servers>
+</FileZilla3>

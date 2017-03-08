@@ -50,35 +50,77 @@ class dashbord extends CI_Model
          ";
 
     // Collecttion Details query -- PERIOD
+    // $sql1 = "SELECT IFNULL(SUM(total),0) AS total, IFNULL(SUM(paid),0)AS paid, IFNULL(SUM(bal),0)AS bal FROM
+    //         (SELECT s.`agreement_no`,SUM(s.`net_amount` + s.`interest_amount`) AS total,IFNULL(rs.paid, 0) AS paid,
+    //         (SUM(s.`net_amount` + s.`interest_amount`)) - IFNULL(rs.paid, 0) AS bal
+    //         FROM t_hp_sales_sum s
+    //         JOIN (SELECT agr_no,SUM(paid_amount) AS paid FROM t_hp_receipt_sum
+    //                   WHERE ddate BETWEEN '".$_POST['from']."' AND '".$_POST['to']."' GROUP BY agr_no) rs
+    //                   ON rs.`agr_no` = s.`agreement_no`
+    //         WHERE s.ddate BETWEEN '".$_POST['from']."' AND '".$_POST['to']."' AND s.cl='".$this->sd['cl']."'
+    //         AND s.bc='".$this->sd['branch']."' GROUP BY s.`agreement_no`
+    //         ) A";
     $sql1 = "SELECT IFNULL(SUM(total),0) AS total, IFNULL(SUM(paid),0)AS paid, IFNULL(SUM(bal),0)AS bal FROM
-            (SELECT s.`agreement_no`,SUM(s.`net_amount` + s.`interest_amount`) AS total,IFNULL(rs.paid, 0) AS paid,
-            (SUM(s.`net_amount` + s.`interest_amount`)) - IFNULL(rs.paid, 0) AS bal
-            FROM t_hp_sales_sum s
-            LEFT JOIN (SELECT agr_no,SUM(paid_amount) AS paid FROM t_hp_receipt_sum
-                      WHERE ddate BETWEEN '".$_POST['from']."' AND '".$_POST['to']."' GROUP BY agr_no) rs
-                      ON rs.`agr_no` = s.`agreement_no`
-            WHERE s.ddate BETWEEN '".$_POST['from']."' AND '".$_POST['to']."' AND s.cl='".$this->sd['cl']."'
-            AND s.bc='".$this->sd['branch']."' GROUP BY s.`agreement_no`
-            ) A";
-
-            // Collecttion Details query -- B?F
-    $sql2 = "SELECT IFNULL(SUM(arreas),0) AS total, IFNULL(SUM(paid),0)AS paid, IFNULL(SUM(bal),0)AS bal FROM
-            (SELECT s.agr_no, SUM(s.dr) - SUM(s.cr) AS arreas, IFNULL(a.paid, 0) AS paid,
-            ((SUM(s.dr) - SUM(s.cr)) - IFNULL(a.paid, 0)) AS bal
+            (SELECT s.`agr_no`,SUM(dr) AS total,IFNULL(rs.paid, 0) AS paid,(SUM(dr)) - IFNULL(rs.paid, 0) AS bal
             FROM t_ins_trans s
             LEFT JOIN
-            (SELECT SUM(paid_amount) AS paid, agr_no
+            (SELECT agr_no,SUM(paid_amount) AS paid
+             FROM t_hp_receipt_sum
+             WHERE ddate BETWEEN '".$_POST['from']."' AND '".$_POST['to']."'
+             GROUP BY agr_no) rs
+             ON rs.`agr_no` = s.`agr_no`
+            WHERE s.ddate BETWEEN  '".$_POST['from']."' AND '".$_POST['to']."'
+            AND s.cl='".$this->sd['cl']."' AND s.bc='".$this->sd['branch']."'
+            GROUP BY s.`agr_no`
+            HAVING bal > 0
+            ) A";
+
+
+            // BF
+
+            $sql2 = "SELECT IFNULL(SUM(arreas),0) AS total, IFNULL(SUM(paid),0)AS paid, IFNULL(SUM(bal),0)AS bal FROM
+            (SELECT s.agr_no, SUM(s.dr) - SUM(cr) AS arreas, IFNULL(a.paid, 0) AS paid,
+            ((SUM(s.dr) - SUM(cr)) - IFNULL(a.paid, 0)) AS bal
+            FROM t_ins_trans s
+            LEFT JOIN
+            (SELECT  SUM(paid_amount) AS paid, agr_no
             FROM t_hp_receipt_sum
-            WHERE ddate BETWEEN '".$_POST['from']."' AND '".$_POST['to']."'
+            WHERE is_cancel = '0'
+            AND ddate BETWEEN '".$_POST['from']."' AND '".$_POST['to']."'
             GROUP BY agr_no) a
             ON a.agr_no = s.agr_no
-            JOIN t_hp_sales_sum ss
+            LEFT JOIN t_hp_sales_sum ss
             ON ss.agreement_no = s.agr_no
-            WHERE s.due_date <= '".$_POST['from']."' AND ss.is_closed = '0'  AND ss.is_cancel = '0'
-            AND s.cl='".$this->sd['cl']."' AND s.bc='".$this->sd['branch']."'
+            WHERE s.due_date < '".$_POST['from']."'
+            AND ss.is_closed = '0'
+            AND ss.is_cancel = '0'
+            AND ss.cl='".$this->sd['cl']."' AND ss.bc='".$this->sd['branch']."'
             GROUP BY agr_no
-            HAVING arreas != 0
+            HAVING arreas > 0
+            AND bal > 0
             ) A";
+
+            // $sql2 = "SELECT IFNULL(SUM(arreas),0) AS total, IFNULL(SUM(paid),0)AS paid, IFNULL(SUM(bal),0)AS bal FROM
+            // (SELECT s.agr_no,SUM(s.dr)-b.paid_amo AS arreas,IFNULL(a.paid,0) AS paid,
+            // ((SUM(s.dr)-b.paid_amo)-IFNULL(a.paid,0)) AS bal
+            // FROM t_ins_trans s
+            // JOIN
+            // (SELECT SUM(paid_amount) AS paid,agr_no
+            // FROM t_hp_receipt_sum
+            // WHERE is_cancel='0' AND ddate BETWEEN '".$_POST['from']."' AND '".$_POST['to']."'
+            // GROUP BY agr_no)a
+            // ON a.agr_no=s.agr_no
+            // JOIN
+            // (SELECT SUM(paid_amount) AS paid_amo,agr_no
+            // FROM t_hp_receipt_sum
+            // WHERE is_cancel='0' AND  ddate<'".$_POST['from']."'
+            // GROUP BY agr_no)b ON b.agr_no=s.agr_no
+            // JOIN t_hp_sales_sum ss ON ss.agreement_no=s.agr_no
+            // WHERE s.due_date<'2017-01-01' AND ss.is_closed='0' AND ss.is_cancel='0'
+            // AND s.cl='".$this->sd['cl']."' AND s.bc='".$this->sd['branch']."'
+            // GROUP BY agr_no
+            // HAVING arreas>=0
+            // ) A";
 
             // Total Collection
             $sql3 = "SELECT SUM(A.amt) AS total_collection FROM (

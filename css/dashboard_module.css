@@ -23,7 +23,7 @@
     overflow: hidden;
     white-space: nowrap;
     position: relative;
-    border-right: 2px solid #D9DEE4;
+  border-right: 1px solid #D9DEE4;
     
 }
 .tile_count .tile_stats_count .count {
@@ -47,13 +47,16 @@
 #load_dash{
   cursor: pointer;
   margin-left: -50px;
-
+  color: white; 
+  font-weight: bold; 
+  padding: 2px; 
+  margin-left: 1px;
 }
 #dash_load_div p{
   margin-top: 6px;
 }
 #dash_load_div span{
-  margin-top: 8px;
+  margin-top: 5px;
   float: right;
 }
 #dash_load_div input{
@@ -63,7 +66,7 @@
 
 }
 .chart_inner{
-  border: 5px solid #cccccc;
+  border: 1px solid #cccccc;
   padding: 5px;
   border-radius: 5px;
 }
@@ -72,4 +75,7 @@
 }
 .count_bottom{
   font-size: 12px;
+}
+.sf-menu ul ul ul {
+    left: 138px !important;
 }

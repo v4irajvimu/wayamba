@@ -1987,8 +1987,23 @@ function cal_installment() {
         $("#installment").val(m_round(installment));
     }
 }
+// function due_date(x) {
+//     $.post("index.php/main/load_data/t_payment_option/get_due_date_hp", {
+//         trans_date: $("#dueDate").val(),
+//         trans_date2: $("#date").val(),
+//         num_of_days: $("#period").val(),
+//         num_of_installment: $("#num_of_installment").val(),
+//         installment_num: x
+//     }, function (res) {
+//         for (n = 0; n < res.a.length; n++) {
+//             $("#duedate_" + (n + 1)).val(res.a[n]);
+//         }
+//     }, "json");
+// }
+// Viraj
 function due_date(x) {
     $.post("index.php/main/load_data/t_payment_option/get_due_date_hp", {
+        scheme: $("#scheme").val(),
         trans_date: $("#dueDate").val(),
         trans_date2: $("#date").val(),
         num_of_days: $("#period").val(),

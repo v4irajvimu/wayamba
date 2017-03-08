@@ -405,7 +405,9 @@ if($ds['use_serial_no_items'] ){
 										<input type="hidden" id="dwn_py" name="dwn_py"/>                                     
 									</td>
 									<td>Due Date</td>
-									<td><input type="text" class="g_input_num input_active" id="dueDate" name="dueDate" maxlength="2" /></td>
+									<td>
+									<input type="text" class="input_date_down_future" readonly="readonly" name="dueDate" id="dueDate" title="<?=date('Y-m-d')?>" style="width: 100px; text-align:right;"/>
+									</td>
 									<td><input type="button" clicked="no" id="installment_calc" title="Calculate" value="Calculate"></td>
 								</tr>
 							</table>

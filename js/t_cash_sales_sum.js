@@ -356,6 +356,7 @@ $(".price , .dis").blur(function(){
 
 
     $("#customer").keypress(function(e){
+        alert('sdsds');
         if(e.keyCode == 112){
             $("#pop_search2").val($("#customer").val());
             load_data9();

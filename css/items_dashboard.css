@@ -1,0 +1,120 @@
+.data-box{
+	border: 1px solid #1ABB9C;
+	padding: 10px;
+	margin-top: 5px;
+	background-color: #ffffff;
+	border-radius: 5px;
+	color: #73879c;
+}
+.dashb-input{
+	border-bottom: 1px solid #6193e2;
+}
+
+.inline_cont{
+	display: inline-block;
+}
+#item_name{
+	/*width: 90%;*/
+}
+.data-add{
+	width: 9%;
+}
+
+#item_input span {
+	margin-top: 5px;
+	float: right;
+}
+#item_info{
+	height: 130px;
+}
+
+#item_img{
+padding: 5px;    
+	height: 130px;     
+	width: 100%;     
+	background-size: 95% 95%
+	!important;     
+	background-repeat: no-repeat !important;
+	background-position:center !important; 
+	position: relative;	
+} 
+#item_img:hover{
+	cursor: zoom-in;
+	opacity: 0.4;
+}
+#item_img_modal{
+	cursor: zoom-out;
+}
+#profit-div{
+	background-color: #CCCCCC65;     
+	border-radius: 5px;     
+	color: #616366;
+	height: 50px; 
+} 
+#profit-div h3{     
+	margin-top: 10px;
+	color: #73879c;
+
+}
+.chart-box{
+	width: 100%; 
+	height: 150px;
+	border-right: solid 1px #1ABB9C;
+}
+.chart-box-right{
+	width: 100%; 
+	height: 150px;
+}
+th{color: #93a9c1;
+	
+}
+td{
+	color: #647689;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+.nav-pills > li.active > a, .nav-pills > li.active > a:focus {
+	color: #f9f9f9 !important;
+background-color: #1abb9c !important;
+font-weight: bold;
+}
+
+.nav-pills > li > a:hover {
+	background-color: #93a9c1 !important;
+	color:#eee !important;
+	font-weight: bold;
+}
+
+.history_tabs .nav-pills > li > a {
+	border-radius: 4px 4px 0 0 ;
+	background-color: #eee;
+	font-weight: bold;
+	color: #93a9c1;
+}
+
+.history_tabs .tab-content {
+	background-color: #f9f9f9;
+padding: 5px 15px;
+border: dashed 1px #1abb9c !important;
+border-radius: 5px;
+}
+
+
+
+/*      */
+.history_tbl thead {
+  width: 97%;
+}
+.history_tbl tbody {
+  height: 170px;
+  overflow-y: auto;
+  width: 100%;
+}
+.history_tbl thead, .history_tbl tbody, .history_tbl tr, .history_tbl td, .history_tbl th {
+  display: block;
+}
+.history_tbl tbody td, .history_tbl thead > tr> th {
+  float: left;
+  border-bottom-width: 0;
+}

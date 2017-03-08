@@ -13,9 +13,33 @@
 	<link href="<?= base_url(); ?>css/slider.css" rel="stylesheet" type="text/css">
 
 	<link rel="stylesheet" type="text/css" href="<?= base_url(); ?>css/menu.css" />
-	<script type="text/javascript" src="<?= base_url(); ?>js/jquery.js"></script>
-	<script type="text/javascript" src="<?= base_url(); ?>js/jquery.ui.core.min.js"></script>
-	<script type="text/javascript" src="<?= base_url(); ?>js/jquery-ui-1.8.17.custom.min.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.4.1.js"></script>
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="<?=base_url()?>js/jstree.min.js"></script>
+<script>
+  $(document).ready(function(){
+	// 6 create an instance when the DOM is ready
+	    $('#jstree').jstree();
+	    // 7 bind to events triggered on the tree
+	    $('#jstree').on("changed.jstree", function (e, data) {
+	      console.log(data.selected);
+	    });
+	    // 8 interact with the tree - either way is OK
+	    // $('button').on('click', function () {
+	    //   $('#jstree').jstree(true).select_node('child_node_1');
+	    //   $('#jstree').jstree('select_node', 'child_node_1');
+	    //   $.jstree.reference('#jstree').select_node('child_node_1');
+	    // });
+
+  });
+    
+  
+  </script>
+
+	
 	<script type="text/javascript" src="<?= base_url(); ?>js/autoNumeric1.6.2.js"></script>
 	<script type="text/javascript" src="<?= base_url(); ?>js/jquery.tablescroll.js"></script>
 	<script type="text/javascript" src="<?= base_url(); ?>js/jquery.form.js"></script>
@@ -24,6 +48,26 @@
 	<script type="text/javascript" src="<?= base_url(); ?>js/inputs.js"></script>
 	<script type="text/javascript" src="<?= base_url(); ?>js/menu.js"></script>
 	<script type="text/javascript" src="<?= base_url(); ?>js/permition.js"></script>
+
+	<!-- Hichart CDN  -->
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/highcharts-3d.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+  <script type="text/javascript" src="<?=base_url(); ?>js/accounting.js"></script>
+
+  
+
+
+
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="/resources/demos/style.css">
 
 </head>
 <body ondragstart="return false;" ondrop="return false;" >

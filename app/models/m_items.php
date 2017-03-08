@@ -237,15 +237,21 @@ public function save(){
     set_error_handler('exceptionThrower'); 
     try{ 
         $file=$_POST["code"];
-        if(!is_dir("./upload/".$file)){
-            mkdir("./upload/".$file);
+        // if(!is_dir("./upload/".$file)){
+        //     mkdir("./upload/".$file);
+        // }
+        $path = dirname($_SERVER["SCRIPT_FILENAME"])."/uploads/";
+        if (!is_dir($path.''.$file)) {
+            mkdir($path.''.$file, 0777, true);
         }
+
+
 
         for($i=1;$i<6;$i++){
             if(!empty($_POST['image_name'.$i])){
                 unset($config);
                 $config['file_name'] = $_POST['image_name'];
-                $config['upload_path'] = "./upload/".$file;
+                $config['upload_path'] = $path.''.$file;
                 $config['allowed_types'] = 'gif|jpg|png|jpeg';
                 $config['max_size'] = '10000';
                 $this->load->library('upload', $config);
@@ -310,7 +316,7 @@ for($x = 1; $x<6; $x++){
             $imgloop[]= array(
                 "item_code" =>$_POST["code"],
                 "name" => $_POST["image_name".$x],
-                "picture" =>"upload/". $codee. "/". $_FILES["userfile".$x]["name"]
+                "picture" =>'uploads/'.$file. "/". $_FILES["userfile".$x]["name"]
                 );              
         }
     }
@@ -542,14 +548,11 @@ public function load(){
  //---------load image------
 
 
+    $base = base_url();
 
-    $this->db->select(array('name as pic_name','picture as pic_picture'));
+    $sql = "SELECT name as pic_name,CONCAT('".$base."',picture) as pic_picture FROM `m_item_picture` WHERE `item_code`='".$_POST['code']."' ";
 
-    $this->db->where('item_code',$_POST['code']);
-
-    $this->db->limit(5);
-
-    $query=$this->db->get('m_item_picture');
+    $query=$this->db->query($sql);
 
 
 

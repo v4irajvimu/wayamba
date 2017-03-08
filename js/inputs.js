@@ -127,6 +127,20 @@ $(document).ready(function(){
             }, 1);
         }        
     });
+
+    $(".datepicker").datepicker({
+        showButtonPanel: false,
+        changeMonth: true,
+        changeYear: true,
+        dateFormat: 'yy-mm-dd',
+        beforeShow: function (input, inst) {
+            var offset = $(input).offset();
+            var height = $(input).height();
+            window.setTimeout(function () {
+                inst.dpDiv.css({ top: (offset.top + height + 4) + 'px', left: offset.left + 'px' })
+            }, 1);
+        }        
+    });
     
     //$('.input_time').timepicker({
     //    //ampm: true

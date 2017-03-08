@@ -1,0 +1,91 @@
+.data-box{
+	margin-top: 80px;
+	border: #1ABB9C solid 2px;
+	border-radius: 15px;
+	padding: 10px;
+	background-color: #dee7f4;
+}
+
+.jstree-default .jstree-icon:empty {
+    /*width: 24px;
+    height: 30px !important;
+    line-height: 35px !important;*/
+}
+
+.inline{
+	display: inline-block;
+}
+
+#multifilters{
+	padding: 25px;
+}
+
+
+/* -- --*/
+body{
+  /*margin      : 0;
+  padding     : 1.5em;
+  font-family : Georgia,Utopia,Charter,serif;*/
+}
+
+.div_cluster{
+  margin-bottom : 1.5em;
+}
+
+input[type=checkbox]:not(old),
+input[type=radio   ]:not(old){
+  width   : 28px;
+  margin  : 0;
+  padding : 0;
+  opacity : 0;
+}
+
+input[type=checkbox]:not(old) + label,
+input[type=radio   ]:not(old) + label{
+  display      : inline-block;
+  margin-left  : -28px;
+  padding-left : 28px;
+  background   : url('checks.png') no-repeat 0 0;
+  line-height  : 24px;
+}
+
+input[type=checkbox]:not(old):checked + label{
+  background-position : 0 -24px;
+}
+
+input[type=radio]:not(old):checked + label{
+  background-position : 0 -48px;
+}
+
+
+/* --- Tabs CSS ---*/
+.nav-pills > li.active > a, .nav-pills > li.active > a:focus {
+	color: #f9f9f9 !important;
+background-color: #1abb9c !important;
+font-weight: bold;
+}
+
+.nav-pills > li > a:hover {
+	background-color: #93a9c1 !important;
+	color:#eee !important;
+	font-weight: bold;
+}
+
+.history_tabs .nav-pills > li > a {
+	border-radius: 4px 4px 0 0 ;
+	background-color: #eee;
+	font-weight: bold;
+	color: #93a9c1;
+}
+
+.history_tabs .tab-content {
+	background-color: #f9f9f9;
+padding: 5px 15px;
+border: dashed 1px #1abb9c !important;
+border-radius: 5px;
+}
+
+.tab-content{
+  height:100px;
+   overflow-y: scroll;
+}
